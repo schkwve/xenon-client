@@ -3,6 +3,8 @@ package me.rj45.xenonclient.module;
 import me.rj45.xenonclient.module.movement.Flight;
 import me.rj45.xenonclient.module.movement.Sprint;
 
+import me.rj45.xenonclient.module.XenonModule.Category;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,12 +12,25 @@ public class ModuleManager {
     public static final ModuleManager INSTANCE = new ModuleManager();
     private List<XenonModule> modules = new ArrayList<>();
 
+
     public ModuleManager() {
         addModules();
     }
 
     public List<XenonModule> getModules() {
         return modules;
+    }
+
+    public List<XenonModule> getModulesInCategory(Category category) {
+        List<XenonModule> categoryModules = new ArrayList<>();
+
+        for (XenonModule module : modules) {
+            if (module.getCategory() == category) {
+                categoryModules.add(module);
+            }
+        }
+
+        return categoryModules;
     }
 
     public List<XenonModule> getEnabledModules() {

@@ -2,6 +2,7 @@ package me.rj45.xenonclient.client;
 
 import me.rj45.xenonclient.module.XenonModule;
 import me.rj45.xenonclient.module.ModuleManager;
+import me.rj45.xenonclient.ui.screens.xenongui.XenonGUI;
 import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,6 +27,10 @@ public class XenonClient implements ModInitializer {
                 if (module.getKey() == key) {
                     module.toggle();
                 }
+            }
+
+            if (key == GLFW.GLFW_KEY_RIGHT_SHIFT) {
+                mc.setScreen(XenonGUI.INSTANCE);
             }
         }
     }

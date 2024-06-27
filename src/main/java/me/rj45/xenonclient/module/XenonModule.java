@@ -85,10 +85,16 @@ public class XenonModule {
     }
 
     public enum Category {
-        COMBAT,
-        MOVEMENT,
-        RENDER,
-        EXPLOIT,
-        WORLD
+        COMBAT("Combat"),
+        MOVEMENT("Movement"),
+        RENDER("Render"),
+        EXPLOIT("Exploit"),
+        WORLD("World");
+
+        public String name;
+
+        private Category(String name) {
+            this.name = name;
+        }
     };
 }
