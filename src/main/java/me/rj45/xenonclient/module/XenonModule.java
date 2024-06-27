@@ -4,6 +4,7 @@ import net.minecraft.client.MinecraftClient;
 
 public class XenonModule {
     private String name;
+    private String displayName;
     private String description;
     public Category category;
     private int key;
@@ -17,6 +18,14 @@ public class XenonModule {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getDescription() {
@@ -70,6 +79,7 @@ public class XenonModule {
 
     public XenonModule(String name, String description, Category category) {
         this.name = name;
+        this.displayName = name;
         this.description = description;
         this.category = category;
     }

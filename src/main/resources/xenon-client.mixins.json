@@ -7,7 +7,8 @@
   ],
   "client": [
     "XenonClientMixin",
-    "KeyboardMixin"
+    "KeyboardMixin",
+    "InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
